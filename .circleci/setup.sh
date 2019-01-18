@@ -29,6 +29,9 @@ if [[ ! -d $WORKSPACE/miniconda ]]; then
     # step 2: setup channels
     conda config --system --add channels conda-forge
 
+    # make sure conda is updated
+    conda update -y --all
+
     # step 3: install conda-build listed in requirements
     conda install -y --file .circleci/requirements.txt --file requirements.txt
 
